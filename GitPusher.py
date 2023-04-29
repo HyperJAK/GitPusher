@@ -55,13 +55,15 @@ class App(tk.Frame):
             os.chdir(local_path)
 
             # Commit and push changes to Github
+            
+            shell_is_disabled = True
 
-            subprocess.run(['git', 'init'])
-            subprocess.run(['git', 'add', '.'])
-            subprocess.run(['git', 'commit', '-m', 'Initial commit'])
-            subprocess.run(['git', 'branch', '-M', 'master'])
-            subprocess.run(['git', 'remote', 'add', 'origin', repo_url])
-            subprocess.run(['git', 'push', '-u', 'origin', 'master'])
+            subprocess.run(['git', 'init'], shell=shell_is_disabled)
+            subprocess.run(['git', 'add', '.'], shell=shell_is_disabled)
+            subprocess.run(['git', 'commit', '-m', 'Initial commit'], shell=shell_is_disabled)
+            subprocess.run(['git', 'branch', '-M', 'master'], shell=shell_is_disabled)
+            subprocess.run(['git', 'remote', 'add', 'origin', repo_url], shell=shell_is_disabled)
+            subprocess.run(['git', 'push', '-u', 'origin', 'master'], shell=shell_is_disabled)
 
             messagebox.showinfo("Success", "Repo uploaded successfully!")
             self.master.quit()
