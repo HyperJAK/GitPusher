@@ -59,7 +59,7 @@ class App(tk.Frame):
             subprocess.run(['git', 'init'], shell=True)
             subprocess.run(['git', 'add', '.'], shell=True)
             subprocess.run(['git', 'commit', '-m', 'Initial commit'], shell=True)
-            subprocess.run(['git', 'branch', '-M', 'master'])
+            subprocess.run(['git', 'branch', '-M', 'master'], shell=True)
             subprocess.run(['git', 'remote', 'add', 'origin', repo_url], shell=True)
             subprocess.run(['git', 'push', '-u', 'origin', 'master'], shell=True)
 
