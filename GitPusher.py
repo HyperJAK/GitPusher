@@ -56,12 +56,12 @@ class App(tk.Frame):
 
             # Commit and push changes to Github
 
-            subprocess.run(['git', 'init'])
-            subprocess.run(['git', 'add', '.'])
-            subprocess.run(['git', 'commit', '-m', 'Initial commit'])
+            subprocess.run(['git', 'init'], shell=True)
+            subprocess.run(['git', 'add', '.'], shell=True)
+            subprocess.run(['git', 'commit', '-m', 'Initial commit'], shell=True)
             subprocess.run(['git', 'branch', '-M', 'master'])
-            subprocess.run(['git', 'remote', 'add', 'origin', repo_url])
-            subprocess.run(['git', 'push', '-u', 'origin', 'master'])
+            subprocess.run(['git', 'remote', 'add', 'origin', repo_url], shell=True)
+            subprocess.run(['git', 'push', '-u', 'origin', 'master'], shell=True)
 
             messagebox.showinfo("Success", "Repo uploaded successfully!")
             self.master.quit()
